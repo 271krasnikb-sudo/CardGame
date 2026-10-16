@@ -44,7 +44,7 @@ public class CardHandGUI
         northPanel.setLayout(new FlowLayout());
 
         nextCardLabel = new JLabel("Next Card:");
-        nextCardHolder = new JLabel(nextCard.getImage());
+        nextCardHolder = new JLabel(nextCard.toString());
 
         JPanel slotPanel = new JPanel();
         slotPanel.setLayout(new FlowLayout());
@@ -77,7 +77,7 @@ public class CardHandGUI
         southPanel.setBackground (Color.white);
         southPanel.setLayout(new FlowLayout());
 
-        cardLabels[0] = new JLabel(hand[0].getImage());
+        cardLabels[0] = new JLabel(hand[0].toString());
         for (int i = 1; i < HANDSIZE; i++)
             cardLabels[i] = new JLabel("");
 
@@ -111,14 +111,14 @@ public class CardHandGUI
             hand[target] = nextCard;
 
             for (int i = 0; i < handCount; i++)
-                cardLabels[i].setIcon(hand[i].getImage());
+                cardLabels[i].setText(hand[i].toString());
 
             if (handCount != HANDSIZE)
             {
                 slotLabels[handCount].setVisible(true);
                 rbuttons[handCount].setVisible(true);
                 nextCard = deck.nextCard();
-                nextCardHolder.setIcon(nextCard.getImage());
+                nextCardHolder.setText(nextCard.toString());
                 slotGroup.clearSelection();
             }
             else
