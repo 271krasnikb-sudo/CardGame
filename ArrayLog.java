@@ -6,8 +6,7 @@
  * @author  
  * @version 
  */
-@SuppressWarnings("unchecked")  // eliminates compiler warnings from cast below
-public class ArrayLog<T> implements EnhancedLogInterface<T>
+public class ArrayLog<T>
 {
     // Instance variables
     private T[] log;
