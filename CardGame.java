@@ -58,6 +58,16 @@ public class CardGame {
             Card card2 = game.get(1);
             Card card3 = game.get(2);
             System.out.println("Your cards: " + card1 + ", " + card2);
+            if (card1.compareTo(card2) == 0) {
+                System.out.println("The first two cards are the same. You automatically win this round.");
+                playerTokens += betAmount;
+                System.out.println("You now have " + playerTokens + " tokens.");
+                continue;
+            } else if (card1.compareTo(card2) == 1 || card1.compareTo(card2) == -1) {
+               System.out.println("The first two cards are one apart. You automatically lose this round.");
+                playerTokens -= betAmount;
+                System.out.println("You now have " + playerTokens + " tokens.");
+            }
 
             if(betAmount * 2 < playerTokens) {
                 System.out.print("Do you want to double your bet?: ");
